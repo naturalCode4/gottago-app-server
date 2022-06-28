@@ -1,0 +1,76 @@
+-- DROP TABLE IF EXISTS Reviews;
+-- DROP TABLE IF EXISTS Bathrooms;
+-- DROP TABLE IF EXISTS Users;
+
+-- CREATE TABLE Users (
+--   id SERIAL PRIMARY KEY,
+--   username VARCHAR(25),
+--   user_password VARCHAR(25),
+--   karma FLOAT
+-- );
+            
+-- create table Bathrooms (
+--   id serial primary key,
+--   latitude float,
+--   longitude float,
+--   bathroom_name varchar(30),
+--   ave_overall float,
+--   ave_cleanliness float,
+--   ave_crowdedness float,
+--   top_category varchar(20),
+--   poster_id integer
+--   -- foreign key (poster_id) references Users(id)
+-- );
+
+-- create table Reviews (
+--   id serial primary key,
+--   overall int,
+--   cleanliness integer,
+--   crowdedness integer,
+--   category varchar(20),
+--   text_review varchar(255),
+--   reviewer_id integer,
+--   bathroom_id integer
+--   -- FOREIGN KEY (reviewer_id) REFERENCES Users(id),
+--   -- FOREIGN KEY (bathroom_id) REFERENCES Bathrooms(id)
+-- );
+
+-- INSERT INTO Bathrooms
+--   (id, latitude, longitude, bathroom_name, ave_overall, ave_cleanliness, ave_crowdedness, top_category)
+-- VALUES (1, 40.0315, -105.2342, 'fake-ass bathroom', 3, 3, 3, 'porta-potty');
+
+-- INSERT INTO Bathrooms
+--   (id, latitude, longitude, bathroom_name, ave_overall, ave_cleanliness, ave_crowdedness, top_category)
+-- VALUES (2, 40.033, -105.24, 'id3 bathroom', 3, 3, 3, 'golden throne');
+
+
+-- +++++++++++++++++++++
+
+-- INSERT INTO Reviews (overall, cleanliness, crowdedness)
+-- VALUES 
+--     (3,4,5),
+--     (5,5,1);
+
+-- INSERT INTO Bathrooms(id, ave_overall, ave_cleaniliness, ave_crowdedness)
+-- VALUES
+--     (1, 100, 200, 300);
+
+-- UPDATE Bathrooms
+-- SET 
+--     ave_overall = 
+--     (SELECT AVG(overall)
+--     FROM REVIEWS),
+--     ave_cleaniliness =
+--     (SELECT AVG(cleanliness)
+--     FROM REVIEWS),
+--     ave_crowdedness =
+--     (SELECT AVG(crowdedness)
+--     FROM REVIEWS)
+-- WHERE id = 1; 
+-- -- ^^actually, where the id is the id of the newly reviewed bathroom
+
+-- SELECT *
+-- FROM Reviews;
+
+-- SELECT *
+-- FROM Bathrooms;
