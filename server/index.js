@@ -24,7 +24,9 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
 
 // app.post('/seed', postgresScript.seed)
 app.get(`/getbathrooms`, postgresScript.getBathrooms)
+app.get(`/getallreviewsforonebathroom/:id`, postgresScript.getAllReviewsForOneBathroom)
 app.post('/postreviewandupdatebathroom', postgresScript.postReviewAndUpdateBathroom)
-// app.get(`/updatenewlyreviewedbathroom/:id`, postgresScript.updateNewlyReviewedBathroom)
+app.post('/postnewbathroomdata', postgresScript.postNewBathroomData)
+app.post('/postreviewdatafornewbathroom', postgresScript.postReview)
 
 app.listen(SERVER_PORT, () => console.log(`Server running on ${SERVER_PORT}`));
