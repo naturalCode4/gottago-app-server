@@ -112,7 +112,8 @@ const updateBathroom = (bathroom_id) => {
                 AND bathroom_id = ${bathroom_id}
                 GROUP BY category
                 ORDER BY COUNT(*) DESC
-                LIMIT 1);
+                LIMIT 1)
+        WHERE id = ${bathroom_id}
     `)
 }
 
