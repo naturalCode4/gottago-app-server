@@ -85,7 +85,6 @@ const postReview = (review) => {
         INSERT INTO Reviews (overall, cleanliness, crowdedness, category, text_review, bathroom_id)
         VALUES (${review.overallRating}, ${review.cleanlinessRating}, ${review.crowdednessRating}, ${convertToStringOrNull(review.type)}, ${convertToStringOrNull(review.textReview)}, ${review.bathroom_id})
     `)
-    //wrap VALUES in convertToStringOrNull^^^
 }
 
 const updateBathroom = (bathroom_id) => {
